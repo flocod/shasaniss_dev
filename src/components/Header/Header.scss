@@ -20,9 +20,14 @@ $linearGradient: linear-gradient(
 
 //   rgba(0, 138, 77, 1) 100%
 // );
-$linearGradient_arc: radial-gradient(110.32% 158.54% at 1.78% 89.88%, #FF2828 0%, #FCC100 37.65%, #008A4D 66.56%, #00A2DE 100%, #4EAC99 100%);
-
-
+$linearGradient_arc: radial-gradient(
+  110.32% 158.54% at 1.78% 89.88%,
+  #ff2828 0%,
+  #fcc100 37.65%,
+  #008a4d 66.56%,
+  #00a2de 100%,
+  #4eac99 100%
+);
 
 @mixin gradient_text {
   background: $linearGradient;
@@ -39,9 +44,8 @@ $linearGradient_arc: radial-gradient(110.32% 158.54% at 1.78% 89.88%, #FF2828 0%
   transition: background 0.3s;
 }
 
-
-.gradient_text_arc{
-    @include gradient_text_arc;
+.gradient_text_arc {
+  @include gradient_text_arc;
 }
 
 .Header {
@@ -69,6 +73,12 @@ $linearGradient_arc: radial-gradient(110.32% 158.54% at 1.78% 89.88%, #FF2828 0%
       img {
         width: 100%;
       }
+
+      .link {
+        color: inherit !important;
+        text-decoration: none;
+      }
+
     }
 
     .nav {
@@ -206,7 +216,8 @@ $linearGradient_arc: radial-gradient(110.32% 158.54% at 1.78% 89.88%, #FF2828 0%
 
           .link {
             color: inherit !important;
-            text-decoration: none;}
+            text-decoration: none;
+          }
         }
 
         .cta {

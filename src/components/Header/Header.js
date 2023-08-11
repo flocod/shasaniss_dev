@@ -10,7 +10,6 @@ const Header = (props) => {
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   mediaQuery.addEventListener("change", handleUserThemeOSChange);
 
-
   useEffect(() => {
     const theme = isActive ? "--theme-color_dark" : "--theme-color_light";
     setThemeBar(theme);
@@ -25,7 +24,6 @@ const Header = (props) => {
 
     localStorage.setItem("theme", theme);
   };
-
 
   const setThemeOs = (theme) => {
     const metaThemeColor = document.getElementById("theme-color-meta");
@@ -46,15 +44,18 @@ const Header = (props) => {
     console.log(event.matches ? "Thème sombre activé" : "Thème clair activé");
     // setIsActive(event.matches);
     setThemeOs(theme);
-    event.matches ? document.querySelector("body").classList.add("dark") : document.querySelector("body").classList.remove("dark");
+    event.matches
+      ? document.querySelector("body").classList.add("dark")
+      : document.querySelector("body").classList.remove("dark");
   }
-
 
   return (
     <div className="Header">
       <div className="main_struct">
         <div className="logo">
-          <img src={logo} alt="logo de shasaniss" />
+          <NavLink className={`link`} to="/">
+            <img src={logo} alt="logo de shasaniss" />
+          </NavLink>
         </div>
 
         <nav className="nav">
@@ -118,12 +119,7 @@ const Header = (props) => {
             </div>
 
             <div className="btn_menu">
-              <button className="btn_cta">
-              <NavLink className={`link`} to='/'>
-                 Menu
-                </NavLink>
-              </button>
-              {/* <button className="btn_cta">Menu</button> */}
+              <button className="btn_cta">Menu</button>
             </div>
 
             <div className="cta">
