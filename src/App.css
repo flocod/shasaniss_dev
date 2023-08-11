@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,27 @@
     transform: rotate(360deg);
   }
 }
+
+/* .dark {
+
+  --bgcolor: #040404 !important;
+
+  --black: #f1f2ee !important;
+
+  --blue-lite: #d6f4ff;
+  --gray: #707070;
+  --green-lite: #caf5c9;
+  --red-lite: #ffcbc2;
+  --stroke: #0404044d;
+  --yellow-lite: #fef4be;
+  --index: calc(1vw + 1vh);
+  --bgcolor: #f1f2ee;
+  --font: "Unbounded";
+
+}
+
+.container{
+  width: 100%;
+  height: auto;
+  background-color: rebeccapurple;
+} */
