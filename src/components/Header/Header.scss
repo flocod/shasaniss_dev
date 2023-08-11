@@ -191,7 +191,8 @@ $linearGradient_arc: radial-gradient(110.32% 158.54% at 1.78% 89.88%, #FF2828 0%
             margin-right: 0rem;
             display: grid;
             place-items: center;
-
+            cursor: pointer;
+            user-select: none;
             .btn_cta {
               padding-top: 9px;
               padding-bottom: 9px;
@@ -202,6 +203,10 @@ $linearGradient_arc: radial-gradient(110.32% 158.54% at 1.78% 89.88%, #FF2828 0%
             }
             color: var(--white);
           }
+
+          .link {
+            color: inherit !important;
+            text-decoration: none;}
         }
 
         .cta {
