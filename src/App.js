@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
+
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Header from "./components/Header/Header";
@@ -52,9 +53,6 @@ function App() {
   };
 
 
-
-
-
   const isActiveToggle = defineClass();
 
   console.log("isActiveToggle", isActiveToggle);
@@ -63,6 +61,7 @@ function App() {
     <>
       <Header isActiveToggle={isActiveToggle}></Header>
       <Routes>
+        <Route  path="/home" element={<Home isActiveToggle={isActiveToggle} />} />
         <Route  path="/" element={<Home isActiveToggle={isActiveToggle} />} />
         <Route path="/services" element={<Services />} />
       </Routes>
