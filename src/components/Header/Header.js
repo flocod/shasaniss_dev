@@ -118,7 +118,12 @@ const Header = (props) => {
             </div>
 
             <div className="btn_menu">
-              <button className="btn_cta">Menu</button>
+              <button className="btn_cta">
+              <NavLink className={`link`} to='/'>
+                 Menu
+                </NavLink>
+              </button>
+              {/* <button className="btn_cta">Menu</button> */}
             </div>
 
             <div className="cta">
