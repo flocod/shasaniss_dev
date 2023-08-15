@@ -1,4 +1,4 @@
-@import url(../../settings.scss);
+@import url(../../index.scss);
 
 $linearGradient: linear-gradient(
   99.64deg,
@@ -75,6 +75,38 @@ $linearGradient: linear-gradient(
       justify-content: left;
       align-items: center;
       width: 100%;
+      position: relative;
+
+      .fleche {
+        fill: var(--bgcolor);
+        width: 9vw;
+        position: absolute;
+        right: 22vw;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media all and (max-width: 1508px) {
+          right: 21vw;
+          width: 8vw;
+        }
+        @media all and (max-width: 1378px) {
+          right: 15vw;
+          width: 8vw;
+        }
+        @media all and (max-width: 1293px) {
+          right: 10vw;
+        }
+        @media all and (max-width: 1156px) {
+          right: 8vw;
+          width: 10vw;
+        }
+        @media all and (max-width: 989px) {
+          right: 2vw;
+        }
+        @media all and (max-width: 915px) {
+          display: none;
+        }
+      }
     }
 
     @media all and (max-width: 1100px) {
@@ -119,36 +151,374 @@ $linearGradient: linear-gradient(
       }
     }
 
-    @media all and (max-width: 398px){
-        .group_btn{
-            margin-top: 1rem;
-            
-            
-
-        }
+    @media all and (max-width: 398px) {
+      .group_btn {
+        margin-top: 1rem;
+      }
     }
 
     @media all and (max-width: 330px) {
-        .group_btn{
-           flex-direction: column;
-           justify-content: center;
-           .btn_gradient{
-            width: 100%;
-           }
-            .btn_icon{
-                width: 100%;
-                margin-left: 0px;
-                margin-top: .5rem;
-               &__struct{
-                width: auto;
-               }
-                
-                .icon{
-                    display: none;
-                }
-            }
+      .group_btn {
+        flex-direction: column;
+        justify-content: center;
+        .btn_gradient {
+          width: 100%;
+        }
+        .btn_icon {
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 0.5rem;
+          &__struct {
+            width: auto;
+          }
+
+          .icon {
+            display: none;
+          }
         }
       }
+    }
+  }
+}
+
+.expertises {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 50px;
+  margin-top: 30px;
+
+  @media all and (max-width: 630px) {
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+
+  $gradien_enseigne: radial-gradient(
+    6785.33% 10348.31% at 37.08% 76.07%,
+    #fd910d 0%,
+    #fcc100 50%
+  );
+  $gradien_amenagement: #008a4d;
+  $gradien_communication: #00a2de;
+  $gradien_camera: #ff2828;
+
+  @media all and (max-width: 1100px) {
+    flex-wrap: wrap;
+  }
+
+  .expertise {
+    width: 23%;
+    height: 12em;
+    display: grid;
+    place-items: center;
+    border-radius: 0px;
+    position: relative;
+
+    @media all and (max-width: 1100px) {
+      width: 49%;
+      margin-bottom: 4em;
+    }
+    @media all and (max-width: 700px) {
+      height: 8em;
+      margin-bottom: 2.5em;
+    }
+
+    @media all and (max-width: 630px) {
+      height: 10em;
+    }
+
+    @media all and (max-width: 530px) {
+      width: 100%;
+    }
+
+    @media all and (max-width: 630px) {
+      // border-radius: 20px !important;
+      // height: auto;
+    }
+
+    &__struct {
+      color: var(--theme-color_dark);
+      background: transparent !important;
+      font-size: 1rem;
+      width: 80%;
+      margin-top: 30px;
+      font-weight: 500;
+      @media all and (max-width: 700px) {
+        font-size: 1.1em;
+      }
+      @media all and (max-width: 630px) {
+        font-size: 1em;
+      }
+
+      // @media all and (max-width: 630px) {
+      //   padding-top: 20px;
+      //   padding-bottom: 20px;
+      // }
+    }
+
+    &::after {
+      position: absolute;
+      right: 10%;
+      top: 10%;
+      font-weight: 800;
+      font-size: 2rem;
+      content: attr(num);
+      @media all and (max-width: 700px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .expert_design {
+      display: grid;
+      place-items: center;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: var(--bgcolor);
+      position: absolute;
+      left: 10%;
+      top: 0px;
+      transform: translateY(-50%);
+      @media all and (max-width: 630px) {
+        width: 45px;
+        height: 45px;
+      }
+
+      span {
+        width: 50%;
+        height: 50%;
+        // background: $gradien_enseigne !important;
+        border-radius: 50%;
+      }
+    }
+  }
+  :nth-child(1) {
+    border-radius: 0px 0px 0px 40px;
+    background: #fef4be;
+    @media all and (max-width: 1100px) {
+      border-radius: 0px;
+    }
+    .expert_design {
+      span {
+        background: $gradien_enseigne;
+      }
+    }
+  }
+  :nth-child(2) {
+    background: #caf5c9;
+    .expert_design {
+      span {
+        background: $gradien_amenagement;
+      }
+    }
+  }
+  :nth-child(3) {
+    background: #d6f4ff;
+
+    .expert_design {
+      span {
+        background: $gradien_communication;
+      }
+    }
+  }
+  :last-child {
+    border-radius: 0px 0px 40px 0px;
+    background: #ffcbc2;
+    @media all and (max-width: 1100px) {
+      border-radius: 0px;
+    }
+    .expert_design {
+      span {
+        background: $gradien_camera;
+      }
+    }
+  }
+}
+
+.discovers {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10em;
+  margin-bottom: 10em;
+
+  @media all and (max-width:1600px){
+    flex-direction: column;
+    align-items: start;
+  }
+
+  @media all and (max-width:1400px){
+    margin-top: 5em;
+  }
+  @media all and (max-width:1100px){
+    margin-bottom: 5em;
+  }
+  @media all and (max-width:1000px){
+    margin-top: 2em;
+  }
+  @media all and (max-width:600px){
+    margin-bottom: 3.2em;
+  }
+
+  .texte {
+    width: 65%;
+    @media all and (max-width:1400px){
+      width: 100%;
+    }
+
+    h2 {
+      color: var(--black);
+      font-size: 4vw !important;
+      @media all and (max-width:1400px){
+      font-size: 6vw !important;
+      }
+
+      @media all and (max-width: 700px) {
+        font-size: 8vw !important;
+      }
+
+    }
+
+    p {
+      color: var(--black);
+      margin-bottom: 0px;
+    }
+  }
+
+  .nombres {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+
+    @media all and (max-width:1600px){
+     margin-top: 4em;
+     width: 500px;
+    }
+
+    @media all and (max-width:580px){
+      margin-top: 2em;
+     width: 100%;
+    }
+
+    .nombre {
+      display: block;
+      .val {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--black);
+        @media all and (max-width:580px){
+          font-size: 6vw;
+      
+        }
+     
+      }
+      .desc {
+        font-size: 1em;
+        font-weight: 400;
+        color: var(--black);
+        @media all and (max-width:580px){
+          font-size: 2.7vw;
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  @media all and (max-width:700px){
+margin-top: 22vw;
+  }
+
+  .cachet{
+    display: block;
+    width: 9vw;
+    height: 9vw;
+    background: var(--black);
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: grid;
+    place-items: center;
+
+    @media all and (max-width:700px){
+      width: 30vw;
+      height: 30vw;
+    }
+
+  .circleTexte{
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      fill: var(--bgcolor)!important;
+      animation: rotate 9s linear infinite;
+      path{
+        fill: var(--bgcolor)!important;
+      }
+      
+    }
+
+    .arrow{
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      display: grid;
+      place-items: center;
+      background: var(--bgcolor);
+      border-radius: 50%;
+
+      svg{
+        width: 35%;
+        fill: var(--bgcolor);
+        path{
+          fill: var(--black);
+        }
+      }
+    }
 
   }
+
+  .img {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    border-radius: 1.875rem;
+    border: 4px solid #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.writting{
+  width: 90%;
+  height: 400px;
+  border: 1px solid var(--black);
+  border-radius: 20px;
+  color: var(--black);
+  padding: 3%;
+  background: none;
 }
